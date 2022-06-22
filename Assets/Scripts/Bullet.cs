@@ -25,6 +25,13 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
+        if(other.gameObject.tag=="Player")
+        {
+            other.GetComponentInChildren<HealthBar>().hp -= 25;
+        }
+
+
         // Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         GameObject exp = ObjectPool.Instance.GetObject(explosionPrefab);
         exp.transform.position = transform.position;

@@ -6,7 +6,6 @@ namespace BulletHell
 {
     public class PlayerMovement : MonoBehaviour
     {
-        public GameObject[] guns;
         public float speed;
         private Vector2 input;
         private Vector2 mousePos;
