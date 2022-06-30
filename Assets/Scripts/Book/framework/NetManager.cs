@@ -65,6 +65,9 @@ public static class NetManager
 		}
 	}
 	//分发事件
+	//指定事件类型netEvent，以及要传给回调方法的字符串err
+	//判断该事件是否含有监听方法 if (eventListeners.ContainsKey(netEvent))
+	//如果有 就调用 eventListeners[netEvent](err);
 	private static void FireEvent(NetEvent netEvent, String err)
 	{
 		if (eventListeners.ContainsKey(netEvent))
@@ -101,6 +104,8 @@ public static class NetManager
 		}
 	}
 	//分发消息
+	//判断监听列表msgListeners中 是否含有对于消息名的回调函数
+	//有就 调用
 	private static void FireMsg(string msgName, MsgBase msgBase)
 	{
 		if (msgListeners.ContainsKey(msgName))

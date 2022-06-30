@@ -75,15 +75,17 @@ public class LoginPanel : BasePanel
         if(msg.result==0)
         {
             Debug.Log("登陆成功！");
-            GameObject playerObj = new GameObject("myPlayer");
+            //GameObject playerObj = new GameObject("myPlayer");
      
 
-            //!!!!!!!!!!!!!!!!!!!!需要后期更改！！1
-            BasePlayer basePlayer = playerObj.AddComponent<BasePlayer>();
-            basePlayer.Init("Ninja");
-            playerObj.transform.GetChild(0).gameObject.AddComponent<CameraFollow>();
+            ////!!!!!!!!!!!!!!!!!!!!需要后期更改！！1
+            //BasePlayer basePlayer = playerObj.AddComponent<BasePlayer>();
+            //basePlayer.Init("Ninja");
+            //playerObj.transform.GetChild(0).gameObject.AddComponent<CameraFollow>();
 
             GameMain.id = msg.id;
+
+            PanelManager.Open<LobbyPanelFix>();
             Close();
         }
         else

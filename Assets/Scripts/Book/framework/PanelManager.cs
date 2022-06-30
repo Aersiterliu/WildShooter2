@@ -52,6 +52,9 @@ public class PanelManager : MonoBehaviour
         }
 
         BasePanel panel = panels[name];
+        //OnClose
+        panel.OnClose();
+        panels.Remove(name);
         GameObject.Destroy(panel.skin);
         Component.Destroy(panel);
     }
